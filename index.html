@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery Mini App</title>
+  <link rel="stylesheet" href="style.css" />
+  <!--
+    Mini app embed metadata. This tells Farcaster how to render
+    your app when it appears in the feed. Update the values below
+    to point at real images hosted on your domain.
+  -->
+  <meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://example.com/share-image.png","button":{"title":"View Gallery","action":{"type":"launch_miniapp"}}}' />
+  <!-- For backward compatibility with legacy clients -->
+  <meta name="fc:frame" content='{"version":"1","imageUrl":"https://example.com/share-image.png","button":{"title":"View Gallery","action":{"type":"launch_frame"}}}' />
+</head>
+<body>
+  <h1>My Cast Images</h1>
+  <div id="gallery"></div>
+  <p id="status"></p>
+
+  <!-- Load the Farcaster Mini App SDK -->
+  <script src="https://miniapps.farcaster.xyz/sdk/sdk.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
