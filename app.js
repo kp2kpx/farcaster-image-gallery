@@ -13,10 +13,9 @@
  * https://neynar.com and replace the placeholder below with your API key.
  */
 
-const NEYNAR_API_KEY = 'REPLACE_WITH_YOUR_NEYNAR_API_KEY';
-
-/**
- * Fetch a list of casts for a given fid via the Neynar hub API.
+//  const NEYNAR_API_KEY = 'NEYNAR_FROG_FM';
+const NEYNAR_API_KEY = 'NEYNAR_FROG_FM';
+ sts for a given fid via the Neynar hub API.
  *
  * @param {number} fid The Farcaster ID of the user.
  * @returns {Promise<Array>} An array of cast messages.
