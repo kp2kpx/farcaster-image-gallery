@@ -1,0 +1,14 @@
+{
+  "miniapp": {
+    "version": "1",
+    "name": "Image Gallery",
+    "iconUrl": "https://example.com/icon.png",
+    "homeUrl": "https://example.com/index.html",
+    "imageUrl": "https://example.com/share-image.png",
+    "buttonTitle": "View Gallery",
+    "splashImageUrl": "https://example.com/icon.png",
+    "splashBackgroundColor": "#ffffff",
+    "subtitle": "See your casted images",
+    "description": "A simple Farcaster mini app that lists your previously shared images"
+  }
+}
