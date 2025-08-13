@@ -15,7 +15,7 @@
 
 //  const NEYNAR_API_KEY = 'NEYNAR_FROG_FM';
 const NEYNAR_API_KEY = 'NEYNAR_FROG_FM';
- sts for a given fid via the Neynar hub API.
+ 
  *
  * @param {number} fid The Farcaster ID of the user.
  * @returns {Promise<Array>} An array of cast messages.
