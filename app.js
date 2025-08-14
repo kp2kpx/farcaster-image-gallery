@@ -1,10 +1,10 @@
 /*
  * Image Gallery Mini App
  *
- * This script fetches a user's previous casts from the Farcaster network and
- * extracts images embedded in those casts. It uses the Mini App SDK to
- * determine the user's fid (Farcaster ID) from the session context. It then
- * calls the Neynar hub API to retrieve the user's casts, searching for
+ * This script fetches a user's previous casts from the Farcaster network
+ * and extracts images embedded in those casts. It uses the Mini App SDK to
+ * determine the user's fid (Farcaster ID) from the session context.
+ * It then calls the Neynar hub API to retrieve the user's casts, searching for
  * `.png`, `.jpg`, `.jpeg`, `.gif` and `.webp` images either in the cast's
  * embeds array or directly in the text. The resulting image URLs are shown
  * as a simple gallery on the page.
@@ -13,10 +13,11 @@
  * https://neynar.com and replace the placeholder below with your API key.
  */
 
-//  const NEYNAR_API_KEY = 'NEYNAR_FROG_FM';
-const NEYNAR_API_KEY = 'NEYNAR_FROG_FM';
- 
- *
+const NEYNAR_API_KEY = 'NEYNAR_FROG_FM'; // Replace with your own API key for production
+
+/**
+ * Fetches casts for a given fid via the Neynar hub API.
+ * 
  * @param {number} fid The Farcaster ID of the user.
  * @returns {Promise<Array>} An array of cast messages.
  */
@@ -24,12 +25,11 @@ async function fetchCasts(fid) {
   const endpoint = `https://hub-api.neynar.com/v1/castsByFid?fid=${fid}&pageSize=1000`;
   const response = await fetch(endpoint, {
     headers: {
-      'Accept': 'application/json',
+      Accept: 'application/json',
       'Content-Type': 'application/json',
-      // Neynar accepts either `api_key` or `x-api-key` header names
-      'api_key': NEYNAR_API_KEY,
-      'x-api-key': NEYNAR_API_KEY
-    }
+      api_key: NEYNAR_API_KEY,
+      'x-api-key': NEYNAR_API_KEY,
+    },
   });
   if (!response.ok) {
     throw new Error(`Failed to fetch casts: ${response.status} ${response.statusText}`);
@@ -98,11 +98,10 @@ async function init() {
   const galleryEl = document.getElementById('gallery');
   try {
     // Wait for the SDK to signal readiness
-//        await actions.ready();
-   
     await sdk.ready();
-       await sdk.actions.ready();
-   
+    // Hide the splash screen once ready
+    await sdk.actions.ready();
+
     const context = sdk.context;
     const fid = context?.user?.fid;
     if (!fid) {
