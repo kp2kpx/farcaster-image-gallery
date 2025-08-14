@@ -98,7 +98,11 @@ async function init() {
   const galleryEl = document.getElementById('gallery');
   try {
     // Wait for the SDK to signal readiness
+//        await actions.ready();
+   
     await sdk.ready();
+       await sdk.actions.ready();
+   
     const context = sdk.context;
     const fid = context?.user?.fid;
     if (!fid) {
